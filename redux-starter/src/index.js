@@ -1,4 +1,4 @@
-import { compose, pipe } from "lodash/fp";
+// import { compose, pipe } from "lodash/fp";
 // //function variable
 
 // function welcome() {
@@ -28,28 +28,36 @@ import { compose, pipe } from "lodash/fp";
 
 // func();
 
-let input = "    JavaScript     ";
-let output = "<div>" + input.trim() + "</div>";
+// let input = "    JavaScript     ";
+// let output = "<div>" + input.trim() + "</div>";
 
-const trim = (str) => str.trim();
+// const trim = (str) => str.trim();
 
-const wrapInSpan = (str) => `<span>${str}</span>`;
-const wrapInDiv = (str) => `<div>${str}</div>`;
-const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
+// const wrapInSpan = (str) => `<span>${str}</span>`;
+// const wrapInDiv = (str) => `<div>${str}</div>`;
+// const wrap = (type) => (str) => `<${type}>${str}</${type}>`;
 
-const toLowerCase = (str) => str.toLowerCase();
+// const toLowerCase = (str) => str.toLowerCase();
 
-// console.log(wrapInDiv(toLowerCase(trim(input))));
+// // console.log(wrapInDiv(toLowerCase(trim(input))));
 
-// const result = compose(wrapInDiv, toLowerCase, trim);
-const result = pipe(trim, toLowerCase, wrap("span"), wrap("div"));
+// // const result = compose(wrapInDiv, toLowerCase, trim);
+// const result = pipe(trim, toLowerCase, wrap("span"), wrap("div"));
 
-const res = result(input);
-const ad = (a, b) => a + b;
+// const res = result(input);
+// const ad = (a, b) => a + b;
 
-const addA = (a) => (b) => a + b;
+// const addA = (a) => (b) => a + b;
 
-console.log(ad(4, 5), "standart");
-console.log(addA(4)(5), "with curriying");
+// console.log(ad(4, 5), "standart");
+// console.log(addA(4)(5), "with curriying");
 
-console.log(res, "111");
+// console.log(res, "111");
+
+import { Map } from "immutable";
+
+const obj = Map({ name: "Ahmadjon", age: 22, phone: 99420943289 });
+const obj2 = obj.set("address", "Jizzax");
+
+console.log(obj.toJS());
+console.log(obj2.toJS());
