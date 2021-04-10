@@ -1,51 +1,20 @@
+import { bugAdded, bugRemoved, bugResolved } from "./actions";
+import store from "./store";
 
+console.log(store);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+store.dispatch(bugAdded("bug 1"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugResolved(3));
+store.dispatch(bugRemoved(5));
+console.log(store.getState());
 
 // import { compose, pipe } from "lodash/fp";
 // //function variable
