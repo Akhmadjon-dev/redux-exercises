@@ -1,3 +1,52 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import { compose, pipe } from "lodash/fp";
 // //function variable
 
@@ -55,17 +104,17 @@
 // console.log(res, "111");
 
 // import { Map } from "immutable";
-import produce from "immer";
-const obj = { name: "Ahmadjon", age: 22, phone: 99420943289 };
+// import produce from "immer";
+// const obj = { name: "Ahmadjon", age: 22, phone: 99420943289 };
 
-const updated = produce(obj, (updated) => {
-  updated.name = "alijon";
-});
+// const updated = produce(obj, (updated) => {
+//   updated.name = "alijon";
+// });
 
 // const obj = Map({ name: "Ahmadjon", age: 22, phone: 99420943289 });
 // const obj2 = obj.set("address", "Jizzax");
 
 // console.log(obj.toJS());
 // console.log(obj2.toJS());
-console.log(obj);
-console.log(updated);
+// console.log(obj);
+// console.log(updated);
