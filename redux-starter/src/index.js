@@ -1,14 +1,18 @@
 import { bugAdded, bugRemoved, bugResolved } from "./actions";
 import store from "./store";
 
-console.log(store);
+store.subscribe(() => {
+  console.log("store changed", store.getState());
+});
 
 store.dispatch(bugAdded("bug 1"));
 store.dispatch(bugAdded("bug 2"));
-store.dispatch(bugAdded("bug 2"));
+// unsubscribe();
+store.dispatch(bugAdded("bug 3"));
 store.dispatch(bugResolved(3));
-store.dispatch(bugRemoved(5));
 console.log(store.getState());
+
+// console.log(store);
 
 // import { compose, pipe } from "lodash/fp";
 // //function variable
