@@ -1,5 +1,5 @@
-import { bugAdded, bugRemoved, bugResolved } from "./actions";
-import store from "./store";
+import { bugAdded, bugRemoved, bugResolved } from "./store/actions";
+import store from "./store/configureStore";
 
 store.subscribe(() => {
   console.log("store changed", store.getState());
