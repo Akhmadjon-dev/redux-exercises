@@ -6,26 +6,28 @@ const BUG__ADDED = "bugAdded";
 const BUG__REMOVED = "bugRemoved";
 const BUG__RESOLVED = "bugResolved";
 
+export const bugAdded = createAction("bugAdded");
+export const bugResolved = createAction("bugResolved");
+export const bugRemoved = createAction("bugRemoved");
 // export const bugAdded = (description) => ({
 //   type: BUG__ADDED,
 //   payload: {
 //     description,
 //   },
 // });
-export const bugAdded = createAction("bugAdded");
 
-export const bugResolved = (id) => ({
-  type: BUG__RESOLVED,
-  payload: {
-    id,
-  },
-});
-export const bugRemoved = (id) => ({
-  type: BUG__REMOVED,
-  payload: {
-    id,
-  },
-});
+// export const bugResolved = (id) => ({
+//   type: BUG__RESOLVED,
+//   payload: {
+//     id,
+//   },
+// });
+// export const bugRemoved = (id) => ({
+//   type: BUG__REMOVED,
+//   payload: {
+//     id,
+//   },
+// });
 
 const initialValue = [];
 let lastId = 0;
