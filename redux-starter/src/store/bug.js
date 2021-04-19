@@ -22,6 +22,7 @@ const slice = createSlice({
 });
 export const { bugAdded, bugRemoved, bugResolved } = slice.actions;
 export default slice.reducer;
+
 // const BUG__ADDED = "bugAdded";
 // const BUG__REMOVED = "bugRemoved";
 // const BUG__RESOLVED = "bugResolved";
