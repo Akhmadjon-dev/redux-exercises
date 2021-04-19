@@ -5,10 +5,10 @@ store.subscribe(() => {
   console.log("store changed", store.getState());
 });
 
-store.dispatch(bugAdded("bug 1"));
-store.dispatch(bugAdded("bug 2"));
+store.dispatch(bugAdded({ description: "bug 1" }));
+store.dispatch(bugAdded({ description: "bug 2" }));
 // unsubscribe();
-store.dispatch(bugAdded("bug 3"));
+store.dispatch(bugAdded({ description: "bug 3" }));
 store.dispatch(bugResolved(3));
 console.log(store.getState());
 

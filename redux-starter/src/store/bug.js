@@ -1,13 +1,18 @@
+import { createAction } from "@reduxjs/toolkit";
+
+createAction;
+
 const BUG__ADDED = "bugAdded";
 const BUG__REMOVED = "bugRemoved";
 const BUG__RESOLVED = "bugResolved";
 
-export const bugAdded = (description) => ({
-  type: BUG__ADDED,
-  payload: {
-    description,
-  },
-});
+// export const bugAdded = (description) => ({
+//   type: BUG__ADDED,
+//   payload: {
+//     description,
+//   },
+// });
+export const bugAdded = createAction("bugAdded");
 
 export const bugResolved = (id) => ({
   type: BUG__RESOLVED,
