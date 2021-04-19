@@ -1,4 +1,4 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction, createReducer } from "@reduxjs/toolkit";
 
 createAction;
 
@@ -31,28 +31,43 @@ export const bugRemoved = createAction("bugRemoved");
 
 const initialValue = [];
 let lastId = 0;
+export default createReducer([], {
+  bugAdded: (state, action) => [
+    ...state,
+    {
+      id: ++lastId,
+      description: action.payload.description,
+      resolved: false,
+    },
+  ],
+  bugRemoved: (state, action) =>
+    state.filter((bug) => bug.id !== action.payload.id),
+  bugResolved: (state, action) =>
+    state.map((bug) =>
+      bug.id === action.payload.id ? { ...bug, resolved: true } : bug
+    ),
+});
+// export default function reducer(state = initialValue, action) {
+//   switch (action.type) {
+//     case BUG__ADDED:
+//       return [
+//         ...state,
+//         {
+//           id: ++lastId,
+//           description: action.payload.description,
+//           resolved: false,
+//         },
+//       ];
 
-export default function reducer(state = initialValue, action) {
-  switch (action.type) {
-    case BUG__ADDED:
-      return [
-        ...state,
-        {
-          id: ++lastId,
-          description: action.payload.description,
-          resolved: false,
-        },
-      ];
+//     case BUG__REMOVED:
+//       return state.filter((bug) => bug.id !== action.payload.id);
 
-    case BUG__REMOVED:
-      return state.filter((bug) => bug.id !== action.payload.id);
+//     case BUG__RESOLVED:
+//       return state.map((bug) =>
+//         bug.id === action.payload.id ? { ...bug, resolved: true } : bug
+//       );
 
-    case BUG__RESOLVED:
-      return state.map((bug) =>
-        bug.id === action.payload.id ? { ...bug, resolved: true } : bug
-      );
-
-    default:
-      return state;
-  }
-}
+//     default:
+//       return state;
+//   }
+// }
