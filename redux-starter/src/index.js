@@ -1,4 +1,4 @@
-import { bugAdded, bugRemoved, bugResolved } from "./store/actions";
+import { bugAdded, bugRemoved, bugResolved } from "./store/bug";
 import store from "./store/configureStore";
 
 store.subscribe(() => {
