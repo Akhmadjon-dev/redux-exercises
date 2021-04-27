@@ -1,16 +1,16 @@
 import { bugAdded, bugRemoved, bugResolved } from "./store/bug";
 import store from "./store/configureStore";
 
-store.subscribe(() => {
-  console.log("store changed", store.getState());
+store.dispatch(() => {
+  store.dispatch(bugAdded({ description: "bug 1" }));
 });
 
-store.dispatch(bugAdded({ description: "bug 1" }));
-store.dispatch(bugAdded({ description: "bug 2" }));
-// unsubscribe();
-store.dispatch(bugAdded({ description: "bug 3" }));
-store.dispatch(bugResolved({ id: 2 }));
-console.log(store.getState());
+// store.dispatch(bugAdded({ description: "bug 1" }));
+// store.dispatch(bugAdded({ description: "bug 2" }));
+// // unsubscribe();
+// store.dispatch(bugAdded({ description: "bug 3" }));
+// store.dispatch(bugResolved({ id: 2 }));
+// console.log(store.getState());
 
 // console.log(store);
 
